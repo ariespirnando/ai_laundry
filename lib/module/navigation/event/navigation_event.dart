@@ -1,4 +1,8 @@
-
 abstract class NavigationEvent {}
-class NavigationIncrementEvent extends NavigationEvent {}
-    
+
+class NavigationSelectedIndex extends NavigationEvent {
+  final int index;
+  NavigationSelectedIndex({
+    required this.index,
+  });
+}

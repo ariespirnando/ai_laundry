@@ -1,4 +1,5 @@
 import 'package:ai_laundry/core.dart';
+import 'package:ai_laundry/shared/widget/custom_bottom_nav_bar_dash.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -50,113 +51,31 @@ class _NavigationViewState extends State<NavigationView> {
     NavigationBloc bloc,
     NavigationState state,
   ) {
-    var dashboardMenus = Padding(
-      padding: const EdgeInsets.all(10),
-      child: MaterialButton(
-        minWidth: 50,
-        onPressed: () {
-          setState(() {
-            currentScrean = const DashboardView();
-            currentTab = 0;
-          });
-        },
-        shape: const CircleBorder(),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(
-              Icons.home_filled,
-              color: currentTab == 0 ? Colors.green : Colors.grey,
-            ),
-          ],
-        ),
-      ),
-    );
-    var historyTrxMenus = Padding(
-      padding: const EdgeInsets.all(10),
-      child: MaterialButton(
-        minWidth: 40,
-        onPressed: () {
-          setState(() {
-            currentScrean = const DashboardView();
-            currentTab = 1;
-          });
-        },
-        shape: const CircleBorder(),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(
-              Icons.list_alt_outlined,
-              color: currentTab == 1 ? Colors.green : Colors.grey,
-            )
-          ],
-        ),
-      ),
-    );
-
-    var pengaturanMenus = Padding(
-      padding: const EdgeInsets.all(10),
-      child: MaterialButton(
-        minWidth: 40,
-        onPressed: () {
-          setState(() {
-            currentScrean = const DashboardView();
-            currentTab = 2;
-          });
-        },
-        shape: const CircleBorder(),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(
-              Icons.settings,
-              color: currentTab == 2 ? Colors.green : Colors.grey,
-            )
-          ],
-        ),
-      ),
-    );
-    var profileMenus = Padding(
-      padding: const EdgeInsets.all(10),
-      child: MaterialButton(
-        minWidth: 40,
-        onPressed: () {
-          setState(() {
-            currentScrean = const DashboardView();
-            currentTab = 3;
-          });
-        },
-        shape: const CircleBorder(),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(
-              Icons.person_2_outlined,
-              color: currentTab == 3 ? Colors.green : Colors.grey,
-            )
-          ],
-        ),
-      ),
-    );
-
     return Scaffold(
-      body: PageStorage(bucket: bucket, child: currentScrean),
-      bottomNavigationBar: BottomAppBar(
-        color: Colors.white,
-        child: SizedBox(
-          height: 50.0,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            mainAxisSize: MainAxisSize.max,
-            children: <Widget>[
-              dashboardMenus,
-              historyTrxMenus,
-              pengaturanMenus,
-              profileMenus
-            ],
-          ),
-        ),
+      body: PageStorage(bucket: bucket, child: state.currenScrean),
+      bottomNavigationBar: CustomBottomNavBarDash(
+        onChange: (index) {
+          bloc.add(NavigationSelectedIndex(index: index));
+        }, // To change items
+
+        defaultSelectedIndex:
+            0, //The default selected item from the navigation bar
+        backgroundColor:
+            Colors.grey.shade100, //Background color of navigation bar
+        radius: 25, //Radius navigation bar
+        showLabel: true, //To show or hide the label
+        textList: const [
+          'Home',
+          'History',
+          'Setting',
+          'Profile',
+        ], //Label list for each item in the navigation bar
+        iconList: const [
+          Icons.home_outlined,
+          Icons.list_alt_outlined,
+          Icons.settings_outlined,
+          Icons.person_outline,
+        ], //Icon list for each item in the navigation bar
       ),
     );
   }

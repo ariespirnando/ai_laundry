@@ -144,7 +144,7 @@ class _LoginFormViewState extends State<LoginFormView> {
                           borderRadius: BorderRadius.circular(10.0),
                         ),
                       ),
-                      onPressed: () => {Get.offAll(const DashboardView())},
+                      onPressed: () => {Get.offAll(const NavigationView())},
                       child: const Text(
                         "Log In",
                         style: TextStyle(fontSize: 16.0, color: Colors.white),

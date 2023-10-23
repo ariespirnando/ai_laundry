@@ -49,14 +49,14 @@ class _LoginViewState extends State<LoginView> {
       backgroundColor: Colors.orange,
       body: Column(
         children: [
-          const SizedBox(
-            height: 60.0,
-          ),
-          Image.asset(
-            "assets/images/login.png",
-            width: Get.width,
-            height: MediaQuery.of(context).size.height * 0.4,
-            fit: BoxFit.cover,
+          Container(
+            margin: const EdgeInsets.only(top: 60),
+            child: Image.asset(
+              "assets/images/login.png",
+              width: Get.width,
+              height: MediaQuery.of(context).size.height * 0.4,
+              fit: BoxFit.cover,
+            ),
           ),
           const Spacer(flex: 1),
           Container(

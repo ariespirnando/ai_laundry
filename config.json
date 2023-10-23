@@ -10,6 +10,7 @@
         "pengaturan/layanan/layanan_list",
         "pengaturan/pewangi/pewangi_form",
         "pengaturan/pewangi/pewangi_list",
+        "pengaturan/pengaturan_menu",
         "transaksi/transaksi_form",
         "transaksi/transaksi_review",
         "transaksi/transaksi_result",

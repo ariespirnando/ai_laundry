@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../bloc/transaksi_history_bloc.dart';
-import '../event/transaksi_history_event.dart';
-import '../state/transaksi_history_state.dart';
+import '../bloc/pengaturan_menu_bloc.dart';
+import '../event/pengaturan_menu_event.dart';
+import '../state/pengaturan_menu_state.dart';
 
-class TransaksiHistoryView extends StatefulWidget {
-  const TransaksiHistoryView({Key? key}) : super(key: key);
+class PengaturanMenuView extends StatefulWidget {
+  const PengaturanMenuView({Key? key}) : super(key: key);
 
   @override
-  State<TransaksiHistoryView> createState() => _TransaksiHistoryViewState();
+  State<PengaturanMenuView> createState() => _PengaturanMenuViewState();
 }
 
-class _TransaksiHistoryViewState extends State<TransaksiHistoryView> {
-  TransaksiHistoryBloc bloc = TransaksiHistoryBloc();
+class _PengaturanMenuViewState extends State<PengaturanMenuView> {
+  PengaturanMenuBloc bloc = PengaturanMenuBloc();
 
   @override
   void initState() {
@@ -30,11 +30,11 @@ class _TransaksiHistoryViewState extends State<TransaksiHistoryView> {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (BuildContext context) => bloc,
-      child: BlocListener<TransaksiHistoryBloc, TransaksiHistoryState>(
+      child: BlocListener<PengaturanMenuBloc, PengaturanMenuState>(
         listener: (context, state) {},
-        child: BlocBuilder<TransaksiHistoryBloc, TransaksiHistoryState>(
+        child: BlocBuilder<PengaturanMenuBloc, PengaturanMenuState>(
           builder: (context, state) {
-            final bloc = context.read<TransaksiHistoryBloc>();
+            final bloc = context.read<PengaturanMenuBloc>();
             return buildView(context, bloc, state);
           },
         ),
@@ -44,8 +44,8 @@ class _TransaksiHistoryViewState extends State<TransaksiHistoryView> {
 
   Widget buildView(
     BuildContext context,
-    TransaksiHistoryBloc bloc,
-    TransaksiHistoryState state,
+    PengaturanMenuBloc bloc,
+    PengaturanMenuState state,
   ) {
     return Scaffold(
       backgroundColor: Colors.orange,
@@ -57,7 +57,7 @@ class _TransaksiHistoryViewState extends State<TransaksiHistoryView> {
             margin: const EdgeInsets.only(top: 20),
             padding: const EdgeInsets.only(top: 30, left: 30, right: 30),
             child: const Text(
-              "Transaction History",
+              "Setting",
               style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
             ),
           ),

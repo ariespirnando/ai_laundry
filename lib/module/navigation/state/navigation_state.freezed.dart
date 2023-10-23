@@ -16,8 +16,10 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$NavigationState {
-  int get counter => throw _privateConstructorUsedError;
-  set counter(int value) => throw _privateConstructorUsedError;
+  int get selectedIndex => throw _privateConstructorUsedError;
+  set selectedIndex(int value) => throw _privateConstructorUsedError;
+  Widget get currenScrean => throw _privateConstructorUsedError;
+  set currenScrean(Widget value) => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $NavigationStateCopyWith<NavigationState> get copyWith =>
@@ -30,7 +32,7 @@ abstract class $NavigationStateCopyWith<$Res> {
           NavigationState value, $Res Function(NavigationState) then) =
       _$NavigationStateCopyWithImpl<$Res, NavigationState>;
   @useResult
-  $Res call({int counter});
+  $Res call({int selectedIndex, Widget currenScrean});
 }
 
 /// @nodoc
@@ -46,13 +48,18 @@ class _$NavigationStateCopyWithImpl<$Res, $Val extends NavigationState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? counter = null,
+    Object? selectedIndex = null,
+    Object? currenScrean = null,
   }) {
     return _then(_value.copyWith(
-      counter: null == counter
-          ? _value.counter
-          : counter // ignore: cast_nullable_to_non_nullable
+      selectedIndex: null == selectedIndex
+          ? _value.selectedIndex
+          : selectedIndex // ignore: cast_nullable_to_non_nullable
               as int,
+      currenScrean: null == currenScrean
+          ? _value.currenScrean
+          : currenScrean // ignore: cast_nullable_to_non_nullable
+              as Widget,
     ) as $Val);
   }
 }
@@ -65,7 +72,7 @@ abstract class _$$NavigationStateImplCopyWith<$Res>
       __$$NavigationStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int counter});
+  $Res call({int selectedIndex, Widget currenScrean});
 }
 
 /// @nodoc
@@ -79,13 +86,18 @@ class __$$NavigationStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? counter = null,
+    Object? selectedIndex = null,
+    Object? currenScrean = null,
   }) {
     return _then(_$NavigationStateImpl(
-      counter: null == counter
-          ? _value.counter
-          : counter // ignore: cast_nullable_to_non_nullable
+      selectedIndex: null == selectedIndex
+          ? _value.selectedIndex
+          : selectedIndex // ignore: cast_nullable_to_non_nullable
               as int,
+      currenScrean: null == currenScrean
+          ? _value.currenScrean
+          : currenScrean // ignore: cast_nullable_to_non_nullable
+              as Widget,
     ));
   }
 }
@@ -93,15 +105,19 @@ class __$$NavigationStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$NavigationStateImpl implements _NavigationState {
-  _$NavigationStateImpl({this.counter = 0});
+  _$NavigationStateImpl(
+      {this.selectedIndex = 0, this.currenScrean = const DashboardView()});
 
   @override
   @JsonKey()
-  int counter;
+  int selectedIndex;
+  @override
+  @JsonKey()
+  Widget currenScrean;
 
   @override
   String toString() {
-    return 'NavigationState(counter: $counter)';
+    return 'NavigationState(selectedIndex: $selectedIndex, currenScrean: $currenScrean)';
   }
 
   @JsonKey(ignore: true)
@@ -113,11 +129,15 @@ class _$NavigationStateImpl implements _NavigationState {
 }
 
 abstract class _NavigationState implements NavigationState {
-  factory _NavigationState({int counter}) = _$NavigationStateImpl;
+  factory _NavigationState({int selectedIndex, Widget currenScrean}) =
+      _$NavigationStateImpl;
 
   @override
-  int get counter;
-  set counter(int value);
+  int get selectedIndex;
+  set selectedIndex(int value);
+  @override
+  Widget get currenScrean;
+  set currenScrean(Widget value);
   @override
   @JsonKey(ignore: true)
   _$$NavigationStateImplCopyWith<_$NavigationStateImpl> get copyWith =>

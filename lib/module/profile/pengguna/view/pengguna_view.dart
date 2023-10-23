@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../bloc/pengguna_bloc.dart';
@@ -43,33 +42,40 @@ class _PenggunaViewState extends State<PenggunaView> {
     );
   }
 
-  Widget buildView( 
-      BuildContext context,
-      PenggunaBloc bloc,
-      PenggunaState state,
-    ) {
+  Widget buildView(
+    BuildContext context,
+    PenggunaBloc bloc,
+    PenggunaState state,
+  ) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Pengguna'),
-      ),
+      backgroundColor: Colors.orange,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Text(
-            'Counter: ${state.counter}',
-            style: const TextStyle(fontSize: 24),
+          Container(
+            margin: const EdgeInsets.only(top: 20),
+            padding: const EdgeInsets.only(top: 30, left: 30, right: 30),
+            child: const Text(
+              "Profile",
+              style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+            ),
           ),
-          IconButton(
-            onPressed: () => bloc.add(PenggunaIncrementEvent()),
-            icon: const Icon(
-              Icons.add,
-              size: 24.0,
+          const Expanded(
+            child: SizedBox(
+              height: 2.0,
+            ),
+          ),
+          Container(
+            height: MediaQuery.of(context).size.height * 0.78,
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(20), topRight: Radius.circular(20)),
             ),
           ),
         ],
       ),
     );
   }
-}    
-    
+}

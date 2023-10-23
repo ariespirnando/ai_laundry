@@ -1,9 +1,6 @@
-import 'package:ai_laundry/state_util.dart';
+import 'package:ai_laundry/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../bloc/dashboard_bloc.dart';
-import '../event/dashboard_event.dart';
-import '../state/dashboard_state.dart';
 
 class DashboardView extends StatefulWidget {
   const DashboardView({Key? key}) : super(key: key);
@@ -54,18 +51,30 @@ class _DashboardViewState extends State<DashboardView> {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          const SizedBox(
-            height: 20.0,
-          ),
           Container(
-            padding: EdgeInsets.all(30),
-            child: const Text(
-              "Welcome back",
-              style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+            margin: const EdgeInsets.only(top: 20),
+            padding: const EdgeInsets.all(30),
+            child: const Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  height: 20.0,
+                ),
+                Text(
+                  "Welcome back",
+                  style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  "Achmad Aries Pirnando",
+                  style: TextStyle(
+                    fontSize: 15.0,
+                  ),
+                ),
+              ],
             ),
           ),
-          Expanded(
-            child: const SizedBox(
+          const Expanded(
+            child: SizedBox(
               height: 2.0,
             ),
           ),

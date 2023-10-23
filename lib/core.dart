@@ -35,6 +35,10 @@ export 'package:ai_laundry/module/pengaturan/layanan/layanan_list/bloc/layanan_l
 export 'package:ai_laundry/module/pengaturan/layanan/layanan_list/event/layanan_list_event.dart';
 export 'package:ai_laundry/module/pengaturan/layanan/layanan_list/state/layanan_list_state.dart';
 export 'package:ai_laundry/module/pengaturan/layanan/layanan_list/view/layanan_list_view.dart';
+export 'package:ai_laundry/module/pengaturan/pengaturan_menu/bloc/pengaturan_menu_bloc.dart';
+export 'package:ai_laundry/module/pengaturan/pengaturan_menu/event/pengaturan_menu_event.dart';
+export 'package:ai_laundry/module/pengaturan/pengaturan_menu/state/pengaturan_menu_state.dart';
+export 'package:ai_laundry/module/pengaturan/pengaturan_menu/view/pengaturan_menu_view.dart';
 export 'package:ai_laundry/module/pengaturan/pewangi/pewangi_form/bloc/pewangi_form_bloc.dart';
 export 'package:ai_laundry/module/pengaturan/pewangi/pewangi_form/event/pewangi_form_event.dart';
 export 'package:ai_laundry/module/pengaturan/pewangi/pewangi_form/state/pewangi_form_state.dart';
@@ -69,4 +73,5 @@ export 'package:ai_laundry/module/transaksi/transaksi_review/state/transaksi_rev
 export 'package:ai_laundry/module/transaksi/transaksi_review/view/transaksi_review_view.dart';
 export 'package:ai_laundry/shared/form/textfield/text_field.dart';
 export 'package:ai_laundry/shared/utils/validator/validator.dart';
+export 'package:ai_laundry/shared/widget/custom_bottom_nav_bar_dash.dart';
 export 'package:ai_laundry/state_util.dart';
