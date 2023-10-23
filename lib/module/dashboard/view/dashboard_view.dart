@@ -85,6 +85,39 @@ class _DashboardViewState extends State<DashboardView> {
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(20), topRight: Radius.circular(20)),
             ),
+            padding: const EdgeInsets.all(20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  color: Colors.white,
+                  height: 50,
+                  width: MediaQuery.of(context).size.width,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.orange,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                    ),
+                    onPressed: () => {Get.offAll(const NavigationView())},
+                    child: const Text(
+                      "Transaction",
+                      style: TextStyle(fontSize: 16.0, color: Colors.white),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20.0,
+                ),
+                const Text(
+                  "Last Transaction",
+                  style: TextStyle(
+                    fontSize: 14.0,
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),

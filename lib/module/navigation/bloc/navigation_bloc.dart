@@ -23,7 +23,7 @@ class NavigationBloc extends Bloc<NavigationEvent, NavigationState>
       } else if (_selectedIndex == 2) {
         state.currenScrean = const PengaturanMenuView();
       } else {
-        state.currenScrean = const PenggunaView();
+        state.currenScrean = const ProfileMenuView();
       }
 
       emit(state.copyWith());

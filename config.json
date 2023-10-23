@@ -16,7 +16,8 @@
         "transaksi/transaksi_result",
         "transaksi/transaksi_history",
         "profile/outlet",
-        "profile/pengguna"
+        "profile/pengguna",
+        "profile/profile_menu"
     ],
     "module_directory_name": "module",
     "experimental_mode": false,

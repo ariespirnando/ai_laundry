@@ -1,16 +1,18 @@
-import 'package:ai_laundry/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../bloc/profile_menu_bloc.dart';
+import '../event/profile_menu_event.dart';
+import '../state/profile_menu_state.dart';
 
-class PengaturanMenuView extends StatefulWidget {
-  const PengaturanMenuView({Key? key}) : super(key: key);
+class ProfileMenuView extends StatefulWidget {
+  const ProfileMenuView({Key? key}) : super(key: key);
 
   @override
-  State<PengaturanMenuView> createState() => _PengaturanMenuViewState();
+  State<ProfileMenuView> createState() => _ProfileMenuViewState();
 }
 
-class _PengaturanMenuViewState extends State<PengaturanMenuView> {
-  PengaturanMenuBloc bloc = PengaturanMenuBloc();
+class _ProfileMenuViewState extends State<ProfileMenuView> {
+  ProfileMenuBloc bloc = ProfileMenuBloc();
 
   @override
   void initState() {
@@ -28,11 +30,11 @@ class _PengaturanMenuViewState extends State<PengaturanMenuView> {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (BuildContext context) => bloc,
-      child: BlocListener<PengaturanMenuBloc, PengaturanMenuState>(
+      child: BlocListener<ProfileMenuBloc, ProfileMenuState>(
         listener: (context, state) {},
-        child: BlocBuilder<PengaturanMenuBloc, PengaturanMenuState>(
+        child: BlocBuilder<ProfileMenuBloc, ProfileMenuState>(
           builder: (context, state) {
-            final bloc = context.read<PengaturanMenuBloc>();
+            final bloc = context.read<ProfileMenuBloc>();
             return buildView(context, bloc, state);
           },
         ),
@@ -42,8 +44,8 @@ class _PengaturanMenuViewState extends State<PengaturanMenuView> {
 
   Widget buildView(
     BuildContext context,
-    PengaturanMenuBloc bloc,
-    PengaturanMenuState state,
+    ProfileMenuBloc bloc,
+    ProfileMenuState state,
   ) {
     return Scaffold(
       backgroundColor: Colors.orange,
@@ -55,7 +57,7 @@ class _PengaturanMenuViewState extends State<PengaturanMenuView> {
             margin: const EdgeInsets.only(top: 20),
             padding: const EdgeInsets.only(top: 30, left: 30, right: 30),
             child: const Text(
-              "Setting",
+              "Profile",
               style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
             ),
           ),
@@ -89,7 +91,7 @@ class _PengaturanMenuViewState extends State<PengaturanMenuView> {
                     ),
                     onPressed: () => {},
                     child: const Text(
-                      "Customers",
+                      "Outlet",
                       style: TextStyle(fontSize: 16.0, color: Colors.white),
                     ),
                   ),
@@ -110,7 +112,7 @@ class _PengaturanMenuViewState extends State<PengaturanMenuView> {
                     ),
                     onPressed: () => {},
                     child: const Text(
-                      "Services",
+                      "Account",
                       style: TextStyle(fontSize: 16.0, color: Colors.white),
                     ),
                   ),
@@ -131,7 +133,7 @@ class _PengaturanMenuViewState extends State<PengaturanMenuView> {
                     ),
                     onPressed: () => {},
                     child: const Text(
-                      "Others",
+                      "Logout",
                       style: TextStyle(fontSize: 16.0, color: Colors.white),
                     ),
                   ),
