@@ -1,0 +1,25 @@
+{
+    "modules": [
+        "navigation",
+        "login/login",
+        "login/login_form",
+        "dashboard",
+        "customer/customer_form",
+        "customer/customer_list",
+        "pengaturan/layanan/layanan_form",
+        "pengaturan/layanan/layanan_list",
+        "pengaturan/pewangi/pewangi_form",
+        "pengaturan/pewangi/pewangi_list",
+        "transaksi/transaksi_form",
+        "transaksi/transaksi_review",
+        "transaksi/transaksi_result",
+        "transaksi/transaksi_history",
+        "profile/outlet",
+        "profile/pengguna"
+    ],
+    "module_directory_name": "module",
+    "experimental_mode": false,
+    "learning_mode": false,
+    "unfreezed": true,
+    "use_cubit": false
+}
