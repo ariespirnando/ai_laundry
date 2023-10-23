@@ -1,3 +1,4 @@
+import 'package:ai_laundry/state_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../bloc/dashboard_bloc.dart';
@@ -53,9 +54,28 @@ class _DashboardViewState extends State<DashboardView> {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Text(
-            'Counter: ${state.counter}',
-            style: const TextStyle(fontSize: 24),
+          const SizedBox(
+            height: 20.0,
+          ),
+          Container(
+            padding: EdgeInsets.all(30),
+            child: const Text(
+              "Welcome back",
+              style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+            ),
+          ),
+          Expanded(
+            child: const SizedBox(
+              height: 2.0,
+            ),
+          ),
+          Container(
+            height: MediaQuery.of(context).size.height * 0.7,
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(20), topRight: Radius.circular(20)),
+            ),
           ),
         ],
       ),
