@@ -1,8 +1,6 @@
+import 'package:ai_laundry/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../bloc/profile_menu_bloc.dart';
-import '../event/profile_menu_event.dart';
-import '../state/profile_menu_state.dart';
 
 class ProfileMenuView extends StatefulWidget {
   const ProfileMenuView({Key? key}) : super(key: key);
@@ -131,7 +129,7 @@ class _ProfileMenuViewState extends State<ProfileMenuView> {
                         borderRadius: BorderRadius.circular(10.0),
                       ),
                     ),
-                    onPressed: () => {},
+                    onPressed: () => {Get.offAll(LoginView())},
                     child: const Text(
                       "Logout",
                       style: TextStyle(fontSize: 16.0, color: Colors.white),
